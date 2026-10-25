@@ -1,0 +1,148 @@
+Build a complete, functional Android camera application named "Ansari Pixel Camera AI".
+
+MAIN GOAL:
+Create an offline-first, AI-powered camera app inspired by the natural portrait photography and computational photography of Google Pixel phones. The app must capture photos, automatically enhance them, and produce realistic DSLR-style portrait results without requiring an internet connection.
+
+IMPORTANT: Build a working Android application, not just a UI prototype or design mockup.
+
+1. CAMERA ACCESS AND PHOTO CAPTURE
+
+- Request camera permission when the app is first opened.
+- Use the phone's camera to capture photos.
+- Provide a modern, full-screen camera preview.
+- Include a large, easy-to-use shutter button.
+- Include front and rear camera switching.
+- Support flash on/off/auto when supported by the device.
+- Support portrait photography and autofocus when available.
+- Allow the user to select existing photos from the gallery.
+
+2. AUTOMATIC PHOTO ENHANCEMENT
+   Immediately after a photo is captured, automatically process it using on-device image processing and AI models.
+
+Target processing time: 5–10 seconds on supported devices. If processing takes longer, show a progress indicator instead of freezing or crashing.
+
+Automatically perform:
+
+- Natural face enhancement.
+- Improved exposure and brightness.
+- Natural contrast and color correction.
+- Noise reduction, especially in low-light photos.
+- Sharpening of facial details without excessive smoothing.
+- Improved white balance and natural skin tones.
+- Background segmentation and realistic portrait blur.
+- Edge refinement around hair, ears, shoulders, and clothing.
+- Preserve original image resolution as much as possible.
+
+3. STRICT FACE IDENTITY PRESERVATION
+   This is the most important requirement.
+
+- Never replace, regenerate, reshape, or reconstruct the person's face.
+- Do not change facial identity, eye shape, nose, lips, beard, hairstyle, expression, or skin tone.
+- Do not create a different person or an AI-generated replacement face.
+- Preserve the original facial structure and recognizable details.
+- Enhance only the real pixels captured by the camera.
+- Avoid artificial beauty filters, plastic skin, and excessive smoothing.
+- Keep the person's natural appearance.
+
+4. REALISTIC DSLR-STYLE BACKGROUND BLUR
+   Create a natural portrait effect inspired by computational photography on Google Pixel phones.
+
+- Keep the subject sharp and the background softly blurred.
+- Detect the person separately from the background.
+- Apply realistic depth-like blur to the background.
+- Preserve fine hair details and avoid cutting off ears or shoulders.
+- Avoid blurring the person's face, body, or clothing.
+- Use adjustable blur strength if supported.
+- Make the result look natural rather than artificial.
+
+If the phone does not support true depth capture, estimate the subject mask using an on-device segmentation model and apply a high-quality blur algorithm.
+
+5. FULLY OFFLINE OPERATION
+   The app must work without Wi-Fi, mobile data, or an internet connection after installation.
+
+- Use on-device image processing.
+- Bundle compatible AI models with the application.
+- Do not require cloud APIs, online AI services, or remote servers.
+- Do not require account registration or login.
+- Do not upload photographs to external servers.
+- Store photos locally on the device.
+- Make all core camera and enhancement features available offline.
+
+Use lightweight, compatible on-device technologies such as MediaPipe Image Segmenter, TensorFlow Lite, LiteRT, or OpenCV where appropriate. Select only libraries and models that are compatible with the project's Android version and licensing requirements.
+
+6. USER INTERFACE
+   Create a premium, minimal, modern interface.
+
+Design:
+
+- Black and dark-grey background.
+- White text and subtle silver accents.
+- Clean camera controls.
+- Smooth, lightweight animations.
+- Large shutter button.
+- Small gallery preview.
+- Simple settings screen.
+- No unnecessary advertisements or clutter.
+- No excessive visual effects that slow down the phone.
+
+7. AFTER-CAPTURE SCREEN
+   After taking a photo:
+
+- Automatically begin enhancement.
+- Show a clear processing indicator.
+- Display the enhanced photo when processing finishes.
+- Provide a before-and-after comparison slider.
+- Add buttons for Save, Retake, Share, and Edit.
+- Save the enhanced photo in the device gallery.
+- Preserve the original photo unless the user chooses to replace or delete it.
+
+8. MANUAL CONTROLS
+   Include optional controls for:
+
+- Background blur strength.
+- Brightness.
+- Contrast.
+- Sharpness.
+- Warmth.
+- Natural enhancement intensity.
+
+Automatic enhancement should be enabled by default.
+
+9. PERFORMANCE AND DEVICE COMPATIBILITY
+   The application must be optimized for budget Android phones as well as more powerful devices.
+
+- Detect device capabilities.
+- Use lightweight models and optimized image processing.
+- Avoid loading unnecessarily large models into memory.
+- Process photos on a background thread.
+- Keep the camera preview responsive.
+- Handle insufficient memory gracefully.
+- Provide a fallback enhancement method if an AI model cannot run.
+- Do not promise 5–10-second processing on every device; optimize for that target and report progress when needed.
+- Use Android CameraX where compatible.
+- Support the project's configured minimum Android SDK.
+- Handle all runtime permissions correctly.
+
+10. PROJECT AND BUILD REQUIREMENTS
+    Generate a complete, buildable Android Studio project using Kotlin and Jetpack Compose.
+
+Include:
+
+- All required source code.
+- Gradle configuration and dependencies.
+- AndroidManifest.xml with correct permissions.
+- CameraX integration.
+- On-device image segmentation and enhancement pipeline.
+- Required model files and their licenses.
+- Gallery access and local photo saving.
+- Error handling and loading indicators.
+- Instructions to build and export a signed APK.
+
+Do not provide only pseudocode, incomplete snippets, or a visual prototype.
+
+Before finishing, verify that the project compiles, camera permissions work, photos can be captured, offline enhancement works, and the app can save the processed photo.
+
+If any requested feature cannot be implemented with the selected model or device, explain the limitation and provide the best functional offline alternative.
+
+FINAL PRIORITY:
+Natural photographs, unchanged facial identity, realistic DSLR-style background blur, fully offline processing, and reliable operation on Android phones.
